@@ -1,4 +1,4 @@
-const { Category } = require('../models');
+const { Category } = require('../models');//can you put ../models/Category.js in ()
 
 const categoryData = [
   {
