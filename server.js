@@ -3,6 +3,12 @@ const express = require('express');
 const routes = require('./routes');
 require('./config/connection');
 
+//to write something in the console terminal and make it a table.
+var consoleTable = require('console-table');
+consoleTable([
+  ["WELCOME TO ECOMMERCE BACK END, PLEASE NAVIGATE TO POSTMAN TO TEST THE DIFFERENT API ROUTES"]
+])
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
