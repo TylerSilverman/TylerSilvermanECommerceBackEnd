@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 3001;
 // import sequelize connection
 const sequelize = require('./config/connection');
 
-//created for handleBars
-// const hbs = exphbs.create({});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
