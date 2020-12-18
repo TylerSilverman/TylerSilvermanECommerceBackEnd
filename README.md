@@ -54,6 +54,7 @@ Your walkthrough video should also show the POST, PUT, and DELETE routes for pro
 You’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your Express.js API to a MySQL database and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data.
 
 ### Database Models
+<<<<<<< HEAD
 aaaa
 ### Fill Out the API Routes to Perform RESTful CRUD Operations
 
@@ -89,6 +90,116 @@ Create the code needed in `server.js` to sync the Sequelize models to the MySQL 
 * The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
 
 * The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
+=======
+
+Your database should contain the following four models, including the requirements listed for each model:
+
+* `Category`
+
+  * `id`
+
+    * Integer.
+  
+    * Doesn't allow null values.
+  
+    * Set as primary key.
+  
+    * Uses auto increment.
+
+  * `category_name`
+  
+    * String.
+  
+    * Doesn't allow null values.
+
+* `Product`
+
+  * `id`
+  
+    * Integer.
+  
+    * Doesn't allow null values.
+  
+    * Set as primary key.
+  
+    * Uses auto increment.
+
+  * `product_name`
+  
+    * String.
+  
+    * Doesn't allow null values.
+
+  * `price`
+  
+    * Decimal.
+  
+    * Doesn't allow null values.
+  
+    * Validates that the value is a decimal.
+
+  * `stock`
+  
+    * Integer.
+  
+    * Doesn't allow null values.
+  
+    * Set a default value of `10`.
+  
+    * Validates that the value is numeric.
+
+  * `category_id`
+  
+    * Integer.
+  
+    * References the `Category` model's `id`.
+
+* `Tag`
+
+  * `id`
+  
+    * Integer.
+  
+    * Doesn't allow null values.
+  
+    * Set as primary key.
+  
+    * Uses auto increment.
+
+  * `tag_name`
+  
+    * String.
+
+* `ProductTag`
+
+  * `id`
+
+    * Integer.
+
+    * Doesn't allow null values.
+
+    * Set as primary key.
+
+    * Uses auto increment.
+
+  * `product_id`
+
+    * Integer.
+
+    * References the `Product` model's `id`.
+
+  * `tag_id`
+
+    * Integer.
+
+    * References the `Tag` model's `id`.
+
+
+
+###
+View the Application:
+https://drive.google.com/file/d/1gVjA0zdn9KqLKLYXXva2Wy1zHXZACBtm/view 
+>>>>>>> d893699235e4d57bc3b749203349c1e7c7bb4532
 
 ### Questions and Comments
 
