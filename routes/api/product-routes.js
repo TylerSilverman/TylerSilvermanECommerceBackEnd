@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Category }, { model: Tag }],
     });
     if (!productIdData) {
-      res.status(404).json({ message: 'No Product found with that id!'});
+      res.status(404).json({ message: 'No Product found with that ID!'});
       return;
     }
     res.status(200).json(productIdData);
@@ -69,13 +69,14 @@ router.post('/', (req, res) => {
 // update product
 router.put('/:product_id', (req, res) => {
   // update product data
-  Product.update(
+  ProductTag.update(
     {
     where: {
       id: req.params.id,
     },
   })
     .then((product) => {
+      console.log(product)
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.product_id } });
     })

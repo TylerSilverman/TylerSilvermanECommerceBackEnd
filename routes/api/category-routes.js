@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err)
   }
 });
-
+// get a category by its `id` value --COMPLETED
 router.get('/:id', async (req, res) => {
   try {
     const categoryID = await Category.findByPk(req.params.id, {
@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(error);
   }
 });
-
+//post /api by its `id` value --COMPLETED
 router.post('/', async (req, res) => {
   try {
     const locationData = await Category.create(req.body);
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+// update a category by its `id` value --COMPLETED
 router.put('/:id', async (req, res) => {
   try {
     const categoryUpdatePut = await Category.update(req.body, {

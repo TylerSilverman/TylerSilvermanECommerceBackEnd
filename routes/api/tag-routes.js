@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!tagData) {
-      res.status(404).json({ message: 'No Tag ID Found with that id!' });
+      res.status(404).json({ message: 'No Tag ID Found with that ID!' });
       return;
     }
 
@@ -37,16 +37,17 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newTag = await Tag.Create (req.body);
+    const newTag = await Tag.Create (req.body.newProductTags);
     res.status(200).json(newTag);
   } catch (error) {
-    res.status(400).json(error);
+    res.status(500).json(error);
   }
 });
 
 
 
 router.put('/tag/:id', (req, res) => {
+  
   Tag.update(req.body, {
     where: {
       id: req.params.id,
